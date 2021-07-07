@@ -34,8 +34,9 @@ public class TorneoTest {
 	@Test
 	public void testQuePermiteSaberSiGanoELLocal() {
 		Torneo apertura = new Torneo();
-		Partidos argchi = new Partidos(1, "Argentina", "Chile");
-		Goles gol1 = new Goles(1, 10, "local", 15);		
+		Goles gol1 = new Goles(1, 10, "local", 15);	
+		Partidos argchi = new Partidos(1, "Argentina", "Chile", gol1);
+			
 		Miembros scaloni = new Dt(222333, "Scaloni", "Argentina", 42);
 		Miembros messi = new Jugador(44455, "Messi", "argentina", 10, "del");
 		Miembros otamendi = new Jugador(666655, "Otamendi", "argentina", 2, "def");

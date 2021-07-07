@@ -9,15 +9,15 @@ public class Partidos {
 	private String nombreEquipoVisitante;
 	private Integer idPartido;
 	private TreeSet<Jugador> nomina;
-	private ArrayList<Goles>golesEnPartido;
+	private Goles gol;
 
-	public Partidos(Integer idPartido, String nombreEquipoLocal, String nombreEquipoVisitante) {
+	public Partidos(Integer idPartido, String nombreEquipoLocal, String nombreEquipoVisitante, Goles gol) {
 
 		this.nombreEquipoLocal = nombreEquipoLocal;
 		this.nombreEquipoVisitante = nombreEquipoVisitante;
 		this.idPartido = idPartido;
 		this.nomina = new TreeSet<>();
-		golesEnPartido= new ArrayList<>();
+		this.gol=gol;
 	}
 	
 	public Boolean ingresarJugadoresALaNomina(Jugador jugadorAIngresar) {
@@ -25,7 +25,6 @@ public class Partidos {
 		return nomina.add(jugadorAIngresar);
 		
 	}
-	
 	
 	
 
@@ -60,5 +59,15 @@ public class Partidos {
 	public void setNomina(TreeSet<Jugador> nomina) {
 		this.nomina = nomina;
 	}
+
+	public Goles getGol() {
+		return gol;
+	}
+
+	public void setGol(Goles gol) {
+		this.gol = gol;
+	}
+	
+	
 
 }

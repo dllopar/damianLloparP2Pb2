@@ -6,7 +6,7 @@ public class Torneo {
 
 	private ArrayList<Goles> goles;
 	private ArrayList<Partidos> partidos;
-	private ArrayList<Miembros>miembrosEquipo;
+	private ArrayList<Miembros> miembrosEquipo;
 
 	public Torneo() {
 
@@ -15,50 +15,66 @@ public class Torneo {
 		miembrosEquipo = new ArrayList<>();
 
 	}
-	
+
 	public Boolean ingresarMiembrosDeEquipo(Miembros miembroAIngresar) {
-		
+
 		return miembrosEquipo.add(miembroAIngresar);
-		
+
 	}
-	
+
 	public Boolean registrarNuevoPartido(Partidos partidoNuevo) {
-		
+
 		return partidos.add(partidoNuevo);
-		
+
 	}
-	
+
 	public Boolean registrarGol(Goles golNuevo) {
-		
+
 		return goles.add(golNuevo);
 	}
-	
-	/*public Boolean registrarNuevoGol(Goles golNuevo) {
-		Boolean registrado = false;
-		
-		for (Goles goles2 : goles) {
-			if(goles2.getNumeroDeCamiseta() == this.buscarJugador()) {
+
+	public String ganadorDelPartido() {
+		String ganador = "empate";
+		Integer local = 0;
+		Integer visitante =0;
+		for (Partidos partido : partidos) {
+			if(partido.getGol().getCondicionEquipo() == "local") {
+				local++;
+			}if(partido.getGol().getCondicionEquipo() == "visitante") {
+				visitante++;
+			}if(visitante>local) {
+				ganador = "visitante";
+			}if(visitante<local) {
 				
 			}
 		}
-		
-		return goles.add(golNuevo);
-	}*/
-	
+		return ganador;
+	}
+
+	/*
+	 * public Boolean registrarNuevoGol(Goles golNuevo) { Boolean registrado =
+	 * false;
+	 * 
+	 * for (Goles goles2 : goles) { if(goles2.getNumeroDeCamiseta() ==
+	 * this.buscarJugador()) {
+	 * 
+	 * } }
+	 * 
+	 * return goles.add(golNuevo); }
+	 */
+
 	public Integer buscarJugador(Jugador buscado) throws JugadorNoEncontradoException {
-		Integer aBuscar=0;
+		Integer aBuscar = 0;
 
 		for (Miembros jugador : miembrosEquipo) {
-			if(jugador.getNombre().equalsIgnoreCase(buscado.getNombre())) {
-				aBuscar=buscado.getNumeroCamiseta();
-			}else {
+			if (jugador.getNombre().equalsIgnoreCase(buscado.getNombre())) {
+				aBuscar = buscado.getNumeroCamiseta();
+			} else {
 				throw new JugadorNoEncontradoException();
 			}
 		}
 		return aBuscar;
 	}
-	
-	
 
 	public ArrayList<Goles> getGoles() {
 		return goles;
@@ -73,10 +89,8 @@ public class Torneo {
 	}
 
 	public Integer cantidadDeMiembros() {
-		
+
 		return miembrosEquipo.size();
 	}
-	
-	
 
 }
