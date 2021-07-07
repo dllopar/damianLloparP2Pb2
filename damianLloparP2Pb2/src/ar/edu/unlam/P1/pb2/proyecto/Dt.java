@@ -1,12 +1,12 @@
 package ar.edu.unlam.P1.pb2.proyecto;
 
-public class Dt extends Miembros{
+public class Dt extends Miembros {
 
 	private Integer edad;
 
 	public Dt(Integer dni, String nombre, String equipo, Integer edad) {
 		super(dni, nombre, equipo);
-		this.edad=edad;
+		this.edad = edad;
 	}
 
 	public Integer getEdad() {
@@ -16,7 +16,5 @@ public class Dt extends Miembros{
 	public void setEdad(Integer edad) {
 		this.edad = edad;
 	}
-	
-	
 
 }

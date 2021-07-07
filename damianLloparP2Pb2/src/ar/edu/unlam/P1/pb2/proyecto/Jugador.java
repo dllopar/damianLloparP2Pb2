@@ -7,8 +7,8 @@ public class Jugador extends Miembros {
 
 	public Jugador(Integer dni, String nombre, String equipo, Integer numeroCamiseta, String posicion) {
 		super(dni, nombre, equipo);
-		this.numeroCamiseta=numeroCamiseta;
-		this.posicion=posicion;
+		this.numeroCamiseta = numeroCamiseta;
+		this.posicion = posicion;
 	}
 
 	public Integer getNumeroCamiseta() {
@@ -26,7 +26,5 @@ public class Jugador extends Miembros {
 	public void setPosicion(String posicion) {
 		this.posicion = posicion;
 	}
-	
-	
 
 }

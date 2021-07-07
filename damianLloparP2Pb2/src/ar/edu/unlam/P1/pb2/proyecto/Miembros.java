@@ -1,17 +1,17 @@
 package ar.edu.unlam.P1.pb2.proyecto;
 
 public class Miembros {
-	
+
 	private Integer dni;
 	private String nombre;
 	private String equipo;
 
 	public Miembros(Integer dni, String nombre, String equipo) {
-		
-		this.dni=dni;
-		this.nombre=nombre;
-		this.equipo=equipo;
-		
+
+		this.dni = dni;
+		this.nombre = nombre;
+		this.equipo = equipo;
+
 	}
 
 	public Integer getDni() {
@@ -37,7 +37,5 @@ public class Miembros {
 	public void setEquipo(String equipo) {
 		this.equipo = equipo;
 	}
-	
-	
 
 }
